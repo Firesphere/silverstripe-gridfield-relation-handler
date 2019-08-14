@@ -99,7 +99,7 @@ abstract class GridFieldRelationHandler implements GridField_ColumnProvider, Gri
 		$state = $this->getState($gridField);
 		if(!$this->useToggle) {
 			$fields = array(
-				Object::create(
+				SS_Object::create(
 					'GridField_FormAction',
 					$gridField,
 					'relationhandler-saverel',
@@ -110,7 +110,7 @@ abstract class GridFieldRelationHandler implements GridField_ColumnProvider, Gri
 			);
 		} elseif($state->ShowingRelation) {
 			$fields = array(
-				Object::create(
+				SS_Object::create(
 					'GridField_FormAction',
 					$gridField,
 					'relationhandler-cancelrel',
@@ -118,7 +118,7 @@ abstract class GridFieldRelationHandler implements GridField_ColumnProvider, Gri
 					'cancelGridRelation',
 					null
 				),
-				Object::create(
+				SS_Object::create(
 					'GridField_FormAction',
 					$gridField,
 					'relationhandler-saverel',
@@ -129,7 +129,7 @@ abstract class GridFieldRelationHandler implements GridField_ColumnProvider, Gri
 			);
 		} else {
 			$fields = array(
-				Object::create(
+				SS_Object::create(
 					'GridField_FormAction',
 					$gridField,
 					'relationhandler-togglerel',
@@ -144,7 +144,7 @@ abstract class GridFieldRelationHandler implements GridField_ColumnProvider, Gri
 
 	public function getHTMLFragments($gridField) {
 		Requirements::javascript(basename(dirname(__DIR__)) . '/javascript/GridFieldRelationHandler.js');
-		$saveRelation = 
+		$saveRelation =
 		$data = new ArrayData(array(
 			'Fields' => $this->getFields($gridField)
 		));
