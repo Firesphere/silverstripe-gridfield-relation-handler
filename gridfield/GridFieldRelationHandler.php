@@ -144,7 +144,6 @@ abstract class GridFieldRelationHandler implements GridField_ColumnProvider, Gri
 
 	public function getHTMLFragments($gridField) {
 		Requirements::javascript(basename(dirname(__DIR__)) . '/javascript/GridFieldRelationHandler.js');
-		$saveRelation =
 		$data = new ArrayData(array(
 			'Fields' => $this->getFields($gridField)
 		));
